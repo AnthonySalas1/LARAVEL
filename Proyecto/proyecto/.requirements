@@ -1,0 +1,14 @@
+ENTORNO VIRTUAL PARA INSTALAR LARAVEL 6 
+LINEA DE COMANDOS GIT BASH
+pip install virtualenv
+virtualenv venv
+source /venv/Scripts/activate
+composer global require "laravel/installer" SI NO TE RECONOCE EL LARAVEL 8
+composer require "darryldecode/cart"
+
+PROBAR LA APP WEB
+php artisan serve
+si no enruta utiliza:
+ composer require laravel/ui "^1.0" --dev
+ php artisan ui vue --auth
+npm install && npm run dev  --> te aperece sugerido con el comando anteorior
