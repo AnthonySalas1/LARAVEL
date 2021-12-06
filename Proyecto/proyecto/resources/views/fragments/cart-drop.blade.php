@@ -35,12 +35,12 @@
     <br>
     <div class="row" style="margin: 0px;">
         <a class="btn btn-dark btn-sm btn-block" href="{{ route('cart.index') }}">
-            CART <i class="fa fa-arrow-right"></i>
+            Carrito <i class="fa fa-arrow-right"></i>
         </a>
         <a class="btn btn-dark btn-sm btn-block" href="">
-            CHECKOUT <i class="fa fa-arrow-right"></i>
+            Terminar de pagar <i class="fa fa-arrow-right"></i>
         </a>
     </div>
 @else
-    <li class="list-group-item">Your Cart is Empty</li>
+    <li class="list-group-item">Su carrito está vacio, cómo mi corazón</li>
 @endif

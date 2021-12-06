@@ -27,3 +27,7 @@ Route::post('/clear', 'CartController@clear')->name('cart.clear');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

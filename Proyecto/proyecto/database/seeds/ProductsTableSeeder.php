@@ -95,5 +95,27 @@ class ProductsTableSeeder extends Seeder
             'brand_id' => 5,
             'image_path' => 'gr5-2017.jpg'
         ]);
+        Product::create([
+            'name' => 'Samsung Camara Digital',
+            'slug' => 'samsung-mv800',
+            'details' => '16.1MP, 5x Optical Zoom',
+            'price' => 144.99,
+            'shipping_cost' => 13.39,
+            'description' => 'Samsung Digital Camera',
+            'category_id' => 5,
+            'brand_id' => 4,
+            'image_path' => 'samsung-mv800.jpg'
+        ]);
+        Product::create([
+            'name' => 'Roomba 960 Robot Aspirador',
+            'slug' => 'roboaspirador',
+            'details' => 'Capacidad 0.6L, Inalámbrico Si, Voltaje 220V',
+            'price' => 400.99,
+            'shipping_cost' => 15.00,
+            'description' => 'Aspiradora Roomba',
+            'category_id' => 4,
+            'brand_id' => 6,
+            'image_path' => 'roomba.PNG'
+        ]);
     }
 }
