@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'CartController@shop')->name('shop');
+Route::get('/checkout', 'CartController@checkout')->name('checkout');
+Route::get('/shop', 'CartController@shop')->name('shop');
 Route::get('/cart', 'CartController@cart')->name('cart.index');
 Route::post('/add', 'CartController@add')->name('cart.store');
 Route::post('/update', 'CartController@update')->name('cart.update');
@@ -24,6 +26,7 @@ Route::post('/clear', 'CartController@clear')->name('cart.clear');
 Route::post('/ update', 'CartController @ update')->name('cart.update');
 Route::post('/ remove', 'CartController @ remove')->name('cart.remove');
 Route::post('/clear', 'CartController@clear')->name('cart.clear');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

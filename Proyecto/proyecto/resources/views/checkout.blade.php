@@ -1,43 +1,26 @@
+
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="margin-top: 80px">
+<div>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="WALV5RKHEE7VY">
+<input type="image" src="https://www.paypalobjects.com/es_XC/AR/i/btn/btn_buynowCC_LG.gif" style="border:0;"  name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" style="border:0;" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+</form>
+<div>
+<div class="container" style="margin-top: 80px">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Tienda</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Carrito</li>
+                <li class="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WALV5RKHEE7VY"><a href="/">Checking</a></li>
+                
             </ol>
         </nav>
-        @if(session()->has('success_msg'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session()->get('success_msg') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-        @endif
-        @if(session()->has('alert_msg'))
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                {{ session()->get('alert_msg') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-        @endif
-        @if(count($errors) > 0)
-            @foreach($errors0>all() as $error)
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ $error }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-            @endforeach
-        @endif
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <br>
-                @if(\Cart::getTotalQuantity()>0)
+        @if(\Cart::getTotalQuantity()>0)
                     <h4>{{ \Cart::getTotalQuantity()}} Producto(s) en tu carrito</h4><br>
                 @else
                     <h4>No hay productos en tu carrito</h4><br>
@@ -79,13 +62,6 @@
                     <hr>
                 @endforeach
                 @if(count($cartCollection)>0)
-                    <form action="{{ route('cart.clear') }}" method="POST">
-                        {{ csrf_field() }}
-                        <button class="btn btn-secondary btn-md">Limpiar carrito</button>
-                    </form>
-                @endif
-            </div>
-            @if(count($cartCollection)>0)
                 <div class="col-lg-5">
                     <div class="card">
                         <ul class="list-group list-group-flush">
@@ -93,10 +69,6 @@
                         </ul>
                     </div>
                     <br><a href="/shop" class="btn btn-dark">Continuar Comprando</a>
-                    <a href="{{ url('/checkout') }}" class="btn btn-success">Proceder a pagar</a>
                 </div>
-            @endif
-        </div>
-        <br><br>
-    </div>
+            </di>
 @endsection

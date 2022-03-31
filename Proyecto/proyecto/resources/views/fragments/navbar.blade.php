@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark shadow-sm">
+<div class="navbar navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <H1>E-TECHIN</H1>
+            <H1>JANAUT</H1>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -30,5 +30,8 @@
                 </li>
             </ul>
         </div>
+        
     </div>
-</nav>
+    <a href="/login" class="btn btn-light ms-3">Login</a>
+    <a href="{{ url('/logout') }}">logout</a>
+</div>

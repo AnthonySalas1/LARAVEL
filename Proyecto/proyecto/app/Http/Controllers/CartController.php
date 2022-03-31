@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use Darryldecode\Cart\Cart;
+
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -22,25 +22,25 @@ class CartController extends Controller
     }
     
     public function add(Request$request){
-        Cart::add(array(
+        \Cart::add(array(
             'id' => $request->id,
             'name' => $request->name,
             'price' => $request->price,
             'quantity' => $request->quantity,
             'attributes' => array(
-                'image' => $request->img,
-                'slug' => $request->slug
+            'image' => $request->img,
+            'slug' => $request->slug
             )
         ));
         return redirect()->route('cart.index')->with('success_msg', 'Item agregado a carrito!');
     }
     public function remove(Request $request){
-        Cart::remove($request->id);
+        \Cart::remove($request->id);
         return redirect()->route('cart.index')->with('success_msg', 'Item eliminado!');
     }
 
     public function update(Request $request){
-        Cart::update($request->id,
+        \Cart::update($request->id,
             array(
                 'quantity' => array(
                     'relative' => false,
@@ -50,8 +50,11 @@ class CartController extends Controller
         return redirect()->route('cart.index')->with('success_msg', 'EL Carrito esa al dia!');
     }
     public function clear(){
-        Cart::clear();
-        return redirect()->route('cart')->with('success_msg', 'El carrito esta Vacio!');
+        \Cart::clear();
+        return redirect()->route('cart.index')->with('success_msg', 'El carrito esta Vacio!');
     }
-
+    public function checkout()
+    {
+        return view('checkout');
+    }
 }
