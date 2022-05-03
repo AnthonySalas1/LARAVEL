@@ -12,3 +12,4 @@ npm-debug.log
 yarn-error.log
 venv
 /ven
+node_modules

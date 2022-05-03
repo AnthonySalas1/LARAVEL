@@ -22,6 +22,7 @@ class ProductsTableSeeder extends Seeder
             'category_id' => 5,
             'brand_id' => 1,
             'image_path' => 'dron.png'
-        ]); 
+        ]);
+
     }
 }
